@@ -3,11 +3,11 @@ from tensorflow.keras.datasets import mnist
 import matplotlib.pyplot as plt
 
 def load_next_digit_data():
-    """
-    Loads MNIST and creates pairs:
-    X = Image of Digit N
-    Y = Image of Digit N+1 (e.g., Input 3 -> Target 4)
-    """
+    
+    #Loads MNIST and creates pairs:
+    #X = Image of Digit N
+    #Y = Image of Digit N+1 (e.g., Input 3 -> Target 4)
+    
     print("Loading MNIST data...")
     (x_train, y_train), (x_test, y_test) = mnist.load_data() # Contains 70,000 images of handwritten digits
 
@@ -37,7 +37,7 @@ def load_next_digit_data():
             x_paired.append(inputs[:min_len])
             y_paired.append(targets[:min_len])
             
-        return np.concatenate(x_paired), np.concatenate(y_paired)
+        return np.concatenate(x_paired), np.concatenate(y_paired) # "stitches" all the lists together
 
     print("Creating Next-Digit pairs (e.g., 3 -> 4)...")
     x_train_next, y_train_next = create_pairs(x_train, y_train)
@@ -72,6 +72,6 @@ if __name__ == "__main__":
         plt.axis('off')
     plt.show()
 
-#This script does NOT recognize what a number is, nor does it generate new pixels. 
-#It simply organizes real human-written photos into 'Flashcards' so a future Neural Network 
-#can learn the transformation from one number to the next.
+#This script does not recognize what a number is, nor does it generate new pixels. 
+#It simply organizes real human written photos into "Flashcards" so a future Neural Network 
+#can learn the transformation from one number to the next
