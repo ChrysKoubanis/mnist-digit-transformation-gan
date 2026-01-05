@@ -1,0 +1,20 @@
+Epoch, Loss, Val_Loss, Time_Sec
+Epoch 1/20 | Loss: 0.2807 | Val Loss: 0.3763 | Time: 123s
+Epoch 2/20 | Loss: 0.2680 | Val Loss: 0.2674 | Time: 119s
+Epoch 3/20 | Loss: 0.2642 | Val Loss: 0.2648 | Time: 120s
+Epoch 4/20 | Loss: 0.2622 | Val Loss: 0.2601 | Time: 116s
+Epoch 5/20 | Loss: 0.2608 | Val Loss: 0.2592 | Time: 113s
+Epoch 6/20 | Loss: 0.2597 | Val Loss: 0.2632 | Time: 131s
+Epoch 7/20 | Loss: 0.2589 | Val Loss: 0.2578 | Time: 136s
+Epoch 8/20 | Loss: 0.2583 | Val Loss: 0.2574 | Time: 124s
+Epoch 9/20 | Loss: 0.2577 | Val Loss: 0.2572 | Time: 120s
+Epoch 10/20 | Loss: 0.2572 | Val Loss: 0.2563 | Time: 119s
+Epoch 11/20 | Loss: 0.2567 | Val Loss: 0.2564 | Time: 119s
+Epoch 12/20 | Loss: 0.2564 | Val Loss: 0.2578 | Time: 117s
+Epoch 13/20 | Loss: 0.2560 | Val Loss: 0.2566 | Time: 125s
+Epoch 14/20 | Loss: 0.2557 | Val Loss: 0.2555 | Time: 128s
+Epoch 15/20 | Loss: 0.2555 | Val Loss: 0.2557 | Time: 129s
+Epoch 16/20 | Loss: 0.2551 | Val Loss: 0.2554 | Time: 128s
+Epoch 17/20 | Loss: 0.2548 | Val Loss: 0.2558 | Time: 125s
+Epoch 19/20 | Loss: 0.2544 | Val Loss: 0.2552 | Time: 123s
+Epoch 20/20 | Loss: 0.2541 | Val Loss: 0.2561 | Time: 122s

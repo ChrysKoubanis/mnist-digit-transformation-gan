@@ -35,7 +35,7 @@ def train_network():
         verbose=1             # Keeps the progress bar, hides extra noise
     )
 
-    # Save the Model
+    # 4. Save the Model
     print("\nSaving Model ...")
     model.save('next_digit_generator.keras') # Python automatically overwrites the existing file after every run ,
                                              #it deletes the old one and replaces it with the new one instantly
@@ -86,7 +86,7 @@ if __name__ == "__main__":
     train_network()
 
 
-# First run: the model output is blurry because the AI averages all the different ways the n+1 number is written in the images we have given it and
+# First run: the model output is blurry because the AI averages all the different ways the n+1 number is written in the images we have givven it and
 # the average of the different ways to write any number looks blurry.
 # To fix this i will change the loss function to mae (Mean Absolute Error) and increase the epochs from 10 to 20
 # This punishes small gray errors less but punishes big errors more, encouraging the model to be bolder and sharper rather than safe and blurry.
@@ -101,11 +101,10 @@ if __name__ == "__main__":
 
 # Third run all the model output images are black again, i will try the Weighted loss mse function and it will hopefully work.
 # Also the loss stopped moving entirely for 19 epochs and stayed at 0.1127.This confirms that the model had indeed "collapsed"  and was just predicting black.
-# 
 
 # Fourth run all the model output images where very blurry, more blurred than the binary crossentropy way.
 # I decided to use the binary crossentropy loss function again and add a sharpness filter that gets the blurry image and
-# if a pixel is > 0.5 it becomes white and if it is < 0.5 it becomes black.
+# if a pixel is > 0.2 it becomes white and if it is < 0.2 it becomes black.
 
 # Fifth run some output images look ok (like some 7s and some 3s) ,but the rest look fragmented because the model is under-confident.
 # To fix that we need to lower the sharpness filter and accept drak grey lines as white.I changed the filter from 0.5 to 0.2 and also added batch normalization 
@@ -120,40 +119,18 @@ if __name__ == "__main__":
 # Instead of that i will use a technique to boost contrast by squaring the values.
 # This pushes gray color to black but keeps white white.
 
-# Eighth run, the output looks way better for all numbers excluding one instance.The output images are readable but blurry.
-# I dont think we can progress much if i tweak the amount of layers or change the activation function or do different contrast tricks.
+# Eigth run, the output looks way better for all numbers excluding one instance.The output images are readable but blurry.
+# I dont think we can progress much if i tweak the amount of layers ,change the activation function or do different contrast tricks.
 # The core issue is that the model sees a 3 and understands that it needs to draw a 4, but doesnt know which one (small one? large one? thick one? a flat one? ....).
 # So it minimizes its error by drawing the average of all possible 4s and  the result is blurry.
 
 
-# While this model fulfills the assignment requirements, the output remains blurry.
-# This is due to the "Regression to the Mean" problem: when the model is unsure which specific style 
-# of '4' to draw, it minimizes error by drawing the average of all possible '4's.
+# i think that i have done what is required by the assignment ,but still i want better results.
+# So i will implement the same technique that is being used to train AI models that generate images and videos.
 
-# To solve this, I plan to implement a Conditional GAN (Generative Adversarial Network).
-# A GAN consists of two competing models:
-
-# The Generator: 
-#    Takes the input number and tries to create a realistic image of the next number.
-#    Its goal is to create images so good that the Discriminator classifies them as "Real".
-
-# The Discriminator: 
-#    It is trained on two types of data:
-#        a) Real images from the dataset (Label: 1 / Real)
-#        b) Fake images from the Generator (Label: 0 / Fake)
-#    - Its goal is to correctly distinguish between real human handwriting and the AI's creation.
-
-# The Training Process:
-# As the Discriminator gets better at spotting fakes, the Generator is forced to stop creating 
-# blurry averages and start creating sharp, specific strokes to fool the Discriminator.
-# This adversarial process eventually lead to realistic looking images of digits.
-
-# Challenges:
-#   Instability: GANs are notoriously hard to train. If the Discriminator learns too fast, 
-#   the Generator collapses. If it learns too slow, the Generator learns nothing.
-
-#   Training Time: Usually, GANs take days to train on high-resolution images.
-#   However, since MNIST images are tiny (28x28) and simple (grayscale [0,1]), 
-#   the computational load is very low. The "search space" for the Generator is small, meaning 
-#   it can learn to fool the Discriminator much faster than it would with color photos. 
-#   This makes it a perfect candidate for a high-performance, low-latency GAN implementation.
+# A Generative adversarial network (GAN) has two models that compete against each other.
+# The first model is a Generator and its purpose is to generate realistic looking data (could be images, could be video ,could be something else) and
+# fool the second model named discriminator which purpose is to get the genarated image made by the generator and guess if the image is real or AI generated.
+# If the discriminator outputs that an image is AI generated and it is correct, the discriminator gets rewarded and the generator punished.
+# It also works the other way around (if the image is AI generated and the discriminator says that it isnt, the generator gets rewarded and the discriminiator punished).
+# In our case , the generator will output a photo of the number that was inputed + 1 and the discriminator will examine it and guess if the result is real or not. 

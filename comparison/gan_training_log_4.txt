@@ -1,0 +1,21 @@
+Epoch, Disc_Loss, Gen_Loss, Time_Sec
+Epoch 1/20 | Disc Loss: 1.1413 | Gen Loss: 13.5551 | Time: 308.2s
+Epoch 2/20 | Disc Loss: 1.1466 | Gen Loss: 13.5603 | Time: 296.5s
+Epoch 3/20 | Disc Loss: 1.0230 | Gen Loss: 12.4711 | Time: 287.9s
+Epoch 4/20 | Disc Loss: 1.0348 | Gen Loss: 12.9017 | Time: 287.5s
+Epoch 5/20 | Disc Loss: 1.2274 | Gen Loss: 13.2621 | Time: 291.0s
+Epoch 6/20 | Disc Loss: 0.9613 | Gen Loss: 12.3053 | Time: 294.1s
+Epoch 7/20 | Disc Loss: 1.1240 | Gen Loss: 11.6454 | Time: 299.3s
+Epoch 8/20 | Disc Loss: 1.0199 | Gen Loss: 12.1843 | Time: 299.5s
+Epoch 9/20 | Disc Loss: 1.0759 | Gen Loss: 13.5905 | Time: 300.5s
+Epoch 10/20 | Disc Loss: 1.0152 | Gen Loss: 13.3252 | Time: 314.9s
+Epoch 11/20 | Disc Loss: 1.0437 | Gen Loss: 12.7516 | Time: 305.5s
+Epoch 12/20 | Disc Loss: 1.0910 | Gen Loss: 11.9627 | Time: 302.2s
+Epoch 13/20 | Disc Loss: 1.4085 | Gen Loss: 12.7163 | Time: 301.5s
+Epoch 14/20 | Disc Loss: 0.8989 | Gen Loss: 12.8001 | Time: 308.3s
+Epoch 15/20 | Disc Loss: 0.9415 | Gen Loss: 13.4057 | Time: 315.1s
+Epoch 16/20 | Disc Loss: 1.2220 | Gen Loss: 11.8813 | Time: 312.6s
+Epoch 17/20 | Disc Loss: 1.0567 | Gen Loss: 12.6908 | Time: 309.1s
+Epoch 18/20 | Disc Loss: 0.9055 | Gen Loss: 12.2642 | Time: 314.6s
+Epoch 19/20 | Disc Loss: 0.7900 | Gen Loss: 13.5814 | Time: 304.1s
+Epoch 20/20 | Disc Loss: 0.9837 | Gen Loss: 13.5106 | Time: 303.2s
