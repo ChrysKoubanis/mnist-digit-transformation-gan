@@ -1,7 +1,4 @@
-# 🔢 MNIST Digit Transformation: Autoencoder vs. Conditional GAN
-
-[![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/)
-[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange.svg)](https://www.tensorflow.org/)
+# MNIST Digit Transformation: Autoencoder vs. Conditional GAN
 
 An end-to-end deep learning project exploring **Image-to-Image Translation** on the MNIST dataset. The objective is to transform an input digit N into its sequential successor (N+1) mod 10 (e.g., translating a drawn 1 into a 2, or a 9 into a 0).
 
