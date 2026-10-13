@@ -1,4 +1,7 @@
 import os
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
 import numpy as np
 import matplotlib.pyplot as plt

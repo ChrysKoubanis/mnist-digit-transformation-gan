@@ -1,4 +1,6 @@
 import os
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+GAN_MODEL_PATH = os.path.join(SCRIPT_DIR, "gan_generator_6.keras")
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
 import numpy as np
 import tensorflow as tf
@@ -8,7 +10,6 @@ from sklearn.metrics import accuracy_score
 import matplotlib.pyplot as plt
 
 # --- CONFIGURATION ---
-GAN_MODEL_PATH = "gan_generator_6.keras" # Your best model
 PCA_COMPONENTS = 32 # Similar compression to your 7x7 bottleneck
 
 def load_data():

@@ -1,4 +1,5 @@
 import os
+
 # Must be set BEFORE importing tensorflow
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # 3 = FATAL ONLY (Hides info, warnings, and errors)
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0' # Disables the optimization spam
@@ -45,7 +46,6 @@ def train_gan():
 
     # Custom training step
     # This function runs for one batch of data
-    @tf.function 
     @tf.function 
     def train_step(input_image, target_image):
         

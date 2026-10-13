@@ -1,4 +1,5 @@
 import os
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -10,19 +11,16 @@ from tensorflow.keras.datasets import mnist
 # 1. FOR VISUAL COMPARISON (The Images)
 # We keep the Regular model here to see the difference
 MODEL_FILES = [
-    "encoder_decoder_final.keras",   
-    "gan_generator_4.keras", 
-    "gan_generator_5.keras", 
-    "gan_generator_6.keras" 
+    os.path.join(SCRIPT_DIR, "encoder_decoder_final.keras"),   
+    os.path.join(SCRIPT_DIR, "gan_generator_4.keras"), 
+    os.path.join(SCRIPT_DIR, "gan_generator_5.keras"), 
+    os.path.join(SCRIPT_DIR, "gan_generator_6.keras") 
 ]
 VISUAL_NAMES = ["Regular (Non-GAN)", "Run 4", "Run 5", "Run 6"]
-
-# 2. FOR MATHEMATICAL COMPARISON (The Graph)
-# We REMOVED the Regular model as requested, since its loss logic is different
 LOG_FILES = [
-    "gan_training_log_4.txt",
-    "gan_training_log_5.txt",
-    "gan_training_log_6.txt"
+    os.path.join(SCRIPT_DIR, "gan_training_log_4.txt"),
+    os.path.join(SCRIPT_DIR, "gan_training_log_5.txt"),
+    os.path.join(SCRIPT_DIR, "gan_training_log_6.txt")
 ]
 GRAPH_NAMES = ["Run 4", "Run 5", "Run 6"]
 
