@@ -44,7 +44,7 @@ neural-networks-assignment-3/
 │
 ├── requirements.txt            # Project dependencies
 └── README.md                   # Project documentation
-
+```
 ---
 
 ## 🚀 Getting Started
@@ -68,9 +68,9 @@ python -m venv venv
 
 
 
-* **On Windows (PowerShell):**
-```powershell
-.\venv\Scripts\Activate.ps1
+* **Windows :**
+```
+.\venv\Scripts\Activate
 
 ```
 
